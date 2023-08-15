@@ -103,7 +103,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests for 
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
-Feel free to customize the contents of this README to match your project's specifics and provide clear instructions for anyone interested in understanding, setting up, and running your authentication system.
 
