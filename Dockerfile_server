@@ -1,0 +1,15 @@
+FROM python:3.8
+
+WORKDIR /app
+
+COPY server.py .
+COPY constants.py .
+COPY zkp_auth.proto .
+
+RUN pip install grpcio
+RUN pip install grpcio-tools
+
+RUN python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. zkp_auth.proto
+
+
+CMD ["python", "server.py"]
