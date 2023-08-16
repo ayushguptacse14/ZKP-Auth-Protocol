@@ -24,14 +24,14 @@ The project consists of two main components: the server and the client.
 ### Server
 
 The server provides the authentication service through gRPC, offering the following functionalities:
-- User registration with unique usernames and private values 'x'.
+- User registration with unique usernames and passwords 'x'.
 - Creation of authentication challenges with random 'c' values for users.
 - Verification of authentication responses.
 
 ### Client
 
 The client interacts with the server to facilitate user registration and authentication:
-- Users can register with unique usernames and private values 'x'.
+- Users can register with unique usernames and passwords 'x'.
 - Users can log in by responding to authentication challenges using calculated responses 's'.
 
 ## Getting Started
@@ -92,8 +92,8 @@ Unit tests are provided in the `test.py` file. To run the tests, follow these st
 
 ## Usage
 
-1. Register: Choose option 1, enter a username and private value 'x', and the user will be registered.
-2. Login: Choose option 2, enter the registered username and the corresponding private value 'x', and the user's authentication status will be displayed.
+1. Register: Choose option 1, enter a username and password 'x', and the user will be registered.
+2. Login: Choose option 2, enter the registered username and the corresponding password 'x', and the user's authentication status will be displayed.
 3. Exit: Choose option 3 to exit the client.
 
 ## Contributing
