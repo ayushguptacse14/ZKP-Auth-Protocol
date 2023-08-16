@@ -12,6 +12,7 @@ This project demonstrates a secure authentication system using zero-knowledge pr
   - [Installation](#installation)
   - [Running the Server](#running-the-server)
   - [Running the Client](#running-the-client)
+- [Running Tests](#running-tests)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
