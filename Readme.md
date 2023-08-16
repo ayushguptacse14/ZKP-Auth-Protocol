@@ -47,7 +47,7 @@ Follow these steps to set up and run the server and client components of the pro
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/zkp-authentication-project.git
+   git clone https://github.com/ayushguptacse14/ZKP-Auth-Protocol.git
    cd zkp-authentication-project
    ```
 
