@@ -32,7 +32,7 @@ class ZKPClientUtil:
             print("\n User Registered:", req.user, "\n")
             return True
         except:
-            print("Username already taken!")
+            print("\n Username already taken! \n")
             return False
 
     @staticmethod
@@ -88,29 +88,37 @@ def main():
             if user_name == "":
                 user_name = default_user_name
 
-            password = input(f"Enter desired password (x value, default: {default_password}): ")
+            password = input(f"Enter desired numeric password (x value, default: {default_password}): ")
             if password == "":
                 password = default_password
-
-            ZKPClientUtil.register_user(stub, user_name, password)
+            else:
+                try:
+                    Decimal(password)
+                    ZKPClientUtil.register_user(stub, user_name, password)
+                except:
+                    print("\n Invalid numeric password. Password should be a number. \n")
         
         elif choice == "2":
             user_name = input(f"Enter username (default: {default_user_name}): ")
             if user_name == "":
                 user_name = default_user_name
 
-            password = input(f"Enter password (x value, default: {default_password}): ")
+            password = input(f"Enter numeric password (x value, default: {default_password}): ")
             if password == "":
                 password = default_password
-
-            ZKPClientUtil.login_user(stub, user_name, password)
+            else:
+                try:
+                    Decimal(password)
+                    ZKPClientUtil.login_user(stub, user_name, password)
+                except:
+                    print("\n Invalid numeric password. Password should be a number. \n")
 
         elif choice == "3":
-            print("Exiting the client.")
+            print(" \n Exiting the client. \n")
             break
 
         else:
-            print("Invalid choice. Please choose a valid option.")
+            print("\n Invalid choice. Please choose a valid option. \n")
 
 
 if __name__ == "__main__":
