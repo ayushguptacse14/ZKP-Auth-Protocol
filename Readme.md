@@ -87,7 +87,8 @@ Unit tests are provided in the `test.py` file. To run the tests, follow these st
 
 2. Navigate to the project root directory:
    ```bash
-   python test.py
+   python server_test.py
+   python client_test.py
    ```
 
 ## Usage

@@ -65,7 +65,10 @@ class ZKPClientUtil:
             auth_id=authentication_challenge_response.auth_id, s=str(s)
         )
         authentication_answer_response = stub.VerifyAuthentication(authentication_answer_request)
-        print("\n Login Successful with Session Id:", authentication_answer_response.session_id,"\n")
+        if (authentication_answer_response.session_id == "INVALID"):
+            print("\n Login Failed \n")
+        else:
+            print("\n Login Successful with Session Id:", authentication_answer_response.session_id,"\n")
 
 def main():
     # Establish a connection to the gRPC server
@@ -91,12 +94,12 @@ def main():
             password = input(f"Enter desired numeric password (x value, default: {default_password}): ")
             if password == "":
                 password = default_password
-            else:
-                try:
-                    Decimal(password)
-                    ZKPClientUtil.register_user(stub, user_name, password)
-                except:
-                    print("\n Invalid numeric password. Password should be a number. \n")
+
+            try:
+                Decimal(password)
+                ZKPClientUtil.register_user(stub, user_name, password)
+            except:
+                print("\n Invalid numeric password. Password should be a number. \n")
         
         elif choice == "2":
             user_name = input(f"Enter username (default: {default_user_name}): ")
@@ -106,12 +109,12 @@ def main():
             password = input(f"Enter numeric password (x value, default: {default_password}): ")
             if password == "":
                 password = default_password
-            else:
-                try:
-                    Decimal(password)
-                    ZKPClientUtil.login_user(stub, user_name, password)
-                except:
-                    print("\n Invalid numeric password. Password should be a number. \n")
+
+            try:
+                Decimal(password)
+                ZKPClientUtil.login_user(stub, user_name, password)
+            except:
+                print("\n Invalid numeric password. Password should be a number. \n")
 
         elif choice == "3":
             print(" \n Exiting the client. \n")
